@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+    <div class="title">
+        <h1>
+            Enter your city!
+        </h1>
+        <input placeholder="any city you want~" id="enteredCity">
+        <button class="btn-info" id="checkWeather" onclick="getCity()">Check</button>
+    </div>
+</div>
+  
+<br>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-3">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Feels like:</td>
+                    </tr>
+                    <tr>
+                        <td>Night:</td>
+                    </tr>
+                    <tr>
+                        <td>Humidity:</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure:</td>
+                    </tr>
+                    <tr>
+                        <td>Wind:</td>
+                    </tr>
+                </table>
+
+            </div>
+            
+            <div class="col-xs-6 col-sm-9">
+                <table>
+                    <tr>
+                        <th id="description"></th>
+                        <th  ></th>
+                        <th id="temp"></th>
+                    </tr>
+                    <tr>
+                        <td id="feels"></td>
+                    </tr>
+                    <tr>
+                        <td id="night"></td>
+                    </tr>
+                    <tr>
+                        <td id="humidity"></td>
+                    </tr>
+                    <tr>
+                        <td id="pressure"></td>
+                    </tr>
+                    <tr>
+                        <td id="wind"></td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div>
+            	  <img id="icon" width="75px" src="imgs/codes/200.png" />
+
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
