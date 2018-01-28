@@ -1,4 +1,5 @@
 var APPID = "06934f16362357dbd8a8448515897953";
+
 var temp;
 var feels;
 var wind;
@@ -9,9 +10,11 @@ var description;
 var icon;
 
 function updateByCity(city) {
-    var url = "http://api.openweathermap.org/data/2.5/weather?" +
-        "q=" + city +
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city +
         "&APPID=" + APPID;
+
+    //  var url =  "api.openweathermap.org/data/2.5/forecast/daily?q="
+    //  + city + "&cnt=7&APPID="+APPID ;
 
 
     sendRequest(url);
@@ -68,10 +71,17 @@ function update(weather) {
 
 }
 
+//get value from input
 function getCity() {
     var enteredCity = document.getElementById("enteredCity").value;
     updateByCity(enteredCity);
 
+}
+
+//Google Maps  
+function initAutocomplete() {
+    var input = document.getElementById('enteredCity');
+    var searchBox = new google.maps.places.SearchBox(input);
 
 }
 

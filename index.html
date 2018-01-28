@@ -5,20 +5,27 @@
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="text/javascript" src="app.js"></script>
+<!--
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBif6akwg88c1z9McpChwsvKDYlCED1nyk&libraries=places">
+    </script>
+-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBif6akwg88c1z9McpChwsvKDYlCED1nyk&libraries=places&callback=initAutocomplete" async defer> </script>
+
+
 </head>
 
 <body>
     <div class="container">
-    <div class="title">
-        <h1>
-            Enter your city!
-        </h1>
-        <input placeholder="any city you want~" id="enteredCity">
-        <button class="btn-info" id="checkWeather" onclick="getCity()">Check</button>
+        <div class="title">
+            <h1>
+                Enter your city!
+            </h1>
+            <input placeholder="any city you want~" id="enteredCity">
+            <button class="btn-info" id="checkWeather" onclick="getCity()">Check</button>
+        </div>
     </div>
-</div>
-  
-<br>
+
+    <br>
 
     <div class="container">
         <div class="row">
@@ -46,12 +53,12 @@
                 </table>
 
             </div>
-            
+
             <div class="col-xs-6 col-sm-9">
                 <table>
                     <tr>
                         <th id="description"></th>
-                        <th  ></th>
+                        <th></th>
                         <th id="temp"></th>
                     </tr>
                     <tr>
@@ -74,7 +81,7 @@
 
             </div>
             <div>
-            	  <img id="icon" width="75px" src="imgs/codes/200.png" />
+                <img id="icon" width="75px" src="" />
 
             </div>
 
