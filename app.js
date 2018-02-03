@@ -9,13 +9,11 @@ var pressure;
 var description;
 var icon;
 
-function updateByCity(city) {
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city +
-        "&APPID=" + APPID;
+function updateByCity(city, country) {
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + APPID;
 
     //  var url =  "api.openweathermap.org/data/2.5/forecast/daily?q="
     //  + city + "&cnt=7&APPID="+APPID ;
-
 
     sendRequest(url);
 
@@ -37,12 +35,12 @@ function sendRequest(url) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var data = JSON.parse(xmlhttp.responseText);
             var weather = {};
-            weather.humidity = data.main.humidity;
+            weather.humidity = data.main.humidity+"%";
             weather.wind = data.wind.speed * 3.6 + " km/h";
-            weather.temp = data.main.temp;
+            weather.temp = Math.round(data.main.temp-273.15)+"&#8451";
             weather.pressure = data.main.pressure + " hPa";
-            weather.night = data.main.temp_min - 273.15;
-            weather.feels = Math.round(data.main.temp - 273.15 - data.wind.speed);
+            weather.night = Math.round(data.main.temp_min - 273.15)+"&#8451";
+            weather.feels = Math.round(data.main.temp - 273.15 - data.wind.speed)+"&#8451";
 
             weather.description = data.weather[0].description;
             weather.icon = data.weather[0].icon;
@@ -102,7 +100,7 @@ window.onload = function () {
     //    weather.presure = "1000pa";
     //
     //    update(weather);
-    updateByCity("toronto");
+    updateByCity("toronto","canada");
     //    
     //    updateByZip(10010);
 }
